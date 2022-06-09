@@ -1,0 +1,38 @@
+.reward {
+	background-color: rgb(220, 239, 248);
+}
+
+.rewardLeman {
+	margin: 0 auto;
+	padding-top: 50px;
+	display: block;
+}
+
+.reward_title {
+	text-align: center;
+	margin: 12px 0 32px 0;
+	color: #033e8c;
+}
+
+.medals_container {
+	display: flex;
+	padding: 0 270px;
+	height: 300px;
+}
+
+.medal {
+	display: flex;
+	flex: 1;
+	width: 112px;
+	height: 70px;
+	flex-direction: column;
+}
+
+.medalImg {
+	display: flex;
+	justify-content: center;
+}
+
+.tripImg {
+	margin-top: 20px;
+}

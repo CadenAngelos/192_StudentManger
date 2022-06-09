@@ -1,0 +1,20 @@
+.title,
+.modal_name_delete{
+	font-weight: bold;
+	font-size: 24px;
+	color: #0468be;
+}
+
+.btn_add button,
+.modal_body button {
+    font-weight: bold;
+	color: #fff;
+	background-color: #0468be;
+	border-radius: 5px;
+    padding: 8px 24px;
+    border: none;
+}
+
+.modal_name_delete {
+    text-align: center;
+}

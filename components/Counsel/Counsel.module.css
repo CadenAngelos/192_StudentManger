@@ -1,0 +1,34 @@
+.counsel {
+	background-image: url("../../public/images/contact1.png"),
+		url("../../public/images/contact2.png");
+	padding: 72px 150px;
+}
+
+.counsel1 {
+	font-size: 14px;
+	color: #ffffff;
+	margin-bottom: 10px;
+}
+
+.counsel2 {
+	font-weight: bold;
+	font-size: 40px;
+	color: #ffffff;
+	margin-bottom: 50px;
+}
+
+.bottom_contact_search_btn {
+	display: flex;
+	gap: 30px;
+	margin-right: 150px;
+}
+
+.bottom_contact_search_btn__btn a {
+	display: inline-block;
+	color: #007e95;
+	background-color: #fff;
+	padding: 9px 18px;
+	margin: 12px 0;
+	font-weight: bold;
+	border-radius: 3px;
+}

@@ -1,0 +1,16 @@
+.teacher_btn__btn a {
+	display: inline-block;
+	color: #fff;
+	background-color: #0468be;
+	padding: 8px 16px;
+	margin: 12px 0;
+	font-weight: bold;
+	font-size: 16px;
+	border-radius: 5px;
+}
+
+.title {
+	font-weight: bolder;
+	font-size: 24px;
+	color: #0468be;
+}
