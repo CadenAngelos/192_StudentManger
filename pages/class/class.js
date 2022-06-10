@@ -20,6 +20,7 @@ import {
 	Input,
 	MuiEditableTable,
 } from "@material-ui/core";
+import Link from "next/link";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import EditIcon from "@material-ui/icons/EditOutlined";
 import DoneIcon from "@material-ui/icons/DoneAllTwoTone";
@@ -56,11 +57,11 @@ const CustomTableCell = ({ row, name, onChange }) => {
 
 export default function Home() {
 	const [rows, setRows] = React.useState([
-		createData("Giải tích 12", "2021-2022", 39, 24, 4.0),
-		createData("Vật lý 11", "2021-2022", 41, 37, 4.3),
-		createData("Giáo dục công dân 10", "2021-2022", 40, 24, 6.0),
-		createData("Hóa học 11", "2021-2022", 41, 37, 4.3),
-		createData("Địa lý 10", "2021-2022", 45, 30, 6.0),
+		createData("Giải tích 12", "2021-2022", 39, "Nguyễn Văn A"),
+		createData("Vật lý 11", "2021-2022", 41, "Nguyễn Văn A"),
+		createData("Giáo dục công dân 10", "2021-2022", 40, "Nguyễn Văn A"),
+		createData("Hóa học 11", "2021-2022", 41, "Nguyễn Văn A"),
+		createData("Địa lý 10", "2021-2022", 45, "Nguyễn Văn A"),
 	]);
 	const [previous, setPrevious] = React.useState({});
 	const classes = useStyles();
@@ -108,15 +109,15 @@ export default function Home() {
 
 	return (
 		<Layout>
-			<Card className="m-4 p-5">
+			<Card className="m-4 p-5 pr-5">
 				<CardContent className={classes.content}>
 					<PerfectScrollbar>
-						<div className={classes.inner}>
+						<div className="pr-40 pl-40">
 							<Table>
 								<TableHead>
 									<TableRow>
 										<TableCell align="left">
-											<div className="text-blue-400 text-lg font-semibold ">
+											<div className=" text-blue-400 text-lg font-semibold ">
 												Tên môn học
 											</div>{" "}
 										</TableCell>
@@ -137,10 +138,9 @@ export default function Home() {
 										</TableCell>
 										<TableCell align="left">
 											<div className="text-blue-400  text-lg font-semibold">
-												Tên môn học
+												Chỉnh sửa
 											</div>{" "}
 										</TableCell>
-										<TableCell align="left" />
 									</TableRow>
 								</TableHead>
 								<TableBody>
@@ -174,13 +174,7 @@ export default function Home() {
 													onChange,
 												}}
 											/>
-											<CustomTableCell
-												{...{
-													row,
-													name: "protein",
-													onChange,
-												}}
-											/>
+
 											<TableCell
 												className={
 													classes.selectTableCell
