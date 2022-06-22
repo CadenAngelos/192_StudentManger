@@ -2,16 +2,37 @@
 	font-weight: bold;
 	font-size: 24px;
 	color: #0468be;
-    margin: 20px 0;
+	margin: 20px 0;
 }
 
- .btn_assess button {
+.btn_assess button {
 	color: #fff;
 	background-color: rgb(4, 103, 190);
 	padding: 6px 10px;
 	margin: 12px 0;
 	font-weight: bold;
 	border-radius: 5px;
-    border: none;
+	border: none;
 	font-size: 12px;
+}
+
+.general_intro__btn {
+	color: #fff !important;
+	width: 130px;
+	height: 40px;
+	background-color: #0468be;
+	text-align: center;
+	border-radius: 3px;
+	margin-top: 20px;
+}
+
+.general_intro__btn a {
+	display: block;
+	color: #fff;
+	padding-top: 10px;
+	font-weight: bold;
+}
+
+.general_intro__img {
+	border-radius: 6px;
 }

@@ -7,19 +7,21 @@ export default function Courses() {
 			<div className="max-w-2xl mx-auto sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
 				<div className="flex justify-end gap-7">
 					<div className={styles.teacher_btn__btn}>
-						<Link href="/teacher/addCourse">Đăng ký khóa học</Link>
+						<Link href="/teacher/addCourse">
+							Thêm tiết học bổ sung
+						</Link>
 					</div>
 					<div className={styles.teacher_btn__btn}>
-						<Link href="/teacher/assess">Đánh giá học viên</Link>
+						<Link href="/teacher/assess">Đánh giá học sinh</Link>
 					</div>
 				</div>
-				<div className={styles.title}>DANH SÁCH KHÓA HỌC CỦA BẠN</div>
+				<div className={styles.title}>DANH SÁCH TIẾT HỌC</div>
 
 				<div className="mt-6 grid grid-cols-1 gap-y-12 gap-x-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-16">
 					<div className="group relative">
 						<div className="w-full min-h-60 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
 							<img
-								src="../images/imgBottom.svg"
+								src="../images/course.png"
 								className="w-full h-full object-center object-cover lg:w-full lg:h-full"
 							/>
 						</div>
@@ -31,8 +33,7 @@ export default function Courses() {
 											aria-hidden="true"
 											className="absolute inset-0"
 										/>
-										5 Steps Forming Tax_Exempt Nonprofit
-										Corpor
+										Ứng dụng của tích phân trong hình học
 									</a>
 								</h3>
 								<p className="mt-1 text-xs text-gray-500">
@@ -48,7 +49,7 @@ export default function Courses() {
 					<div className="group relative">
 						<div className="w-full min-h-60 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
 							<img
-								src="../images/imgBottom.svg"
+								src="../images/course.png"
 								className="w-full h-full object-center object-cover lg:w-full lg:h-full"
 							/>
 						</div>
@@ -60,8 +61,7 @@ export default function Courses() {
 											aria-hidden="true"
 											className="absolute inset-0"
 										/>
-										5 Steps Forming Tax_Exempt Nonprofit
-										Corpor
+										Ứng dụng của tích phân trong hình học
 									</a>
 								</h3>
 								<p className="mt-1 text-xs text-gray-500">
@@ -76,7 +76,7 @@ export default function Courses() {
 					<div className="group relative">
 						<div className="w-full min-h-60 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
 							<img
-								src="../images/imgBottom.svg"
+								src="../images/course.png"
 								className="w-full h-full object-center object-cover lg:w-full lg:h-full"
 							/>
 						</div>
@@ -88,8 +88,7 @@ export default function Courses() {
 											aria-hidden="true"
 											className="absolute inset-0"
 										/>
-										5 Steps Forming Tax_Exempt Nonprofit
-										Corpor
+										Ứng dụng của tích phân trong hình học
 									</a>
 								</h3>
 								<p className="mt-1 text-xs text-gray-500">

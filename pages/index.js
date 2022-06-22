@@ -30,7 +30,7 @@ export default function Home() {
 						</p>
 					</div>
 					<div className={styles.general_intro__btn}>
-						<a href="#">SEE MORE</a>
+						<a href="class/class">SEE MORE</a>
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 .footer_container {
-	color: white !important;
-	background-color: gray;
+	color: rgb(161, 157, 157) !important;
+	background-color: rgb(224, 219, 219);
 	display: flex;
 	justify-content: space-between;
 	padding: 50px 150px;
@@ -11,7 +11,7 @@
 .title {
 	font-size: 18px;
 	font-weight: bold;
-	color: #ffffff;
+	color: rgb(161, 157, 157);
 }
 
 .footer_list {
@@ -23,7 +23,7 @@
 }
 
 .footer_list li a {
-	color: #fff;
+	color: rgb(161, 157, 157);
 }
 
 .footer_contact {

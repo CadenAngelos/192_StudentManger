@@ -25,8 +25,6 @@ import EditIcon from "@material-ui/icons/EditOutlined";
 import DoneIcon from "@material-ui/icons/DoneAllTwoTone";
 import RevertIcon from "@material-ui/icons/NotInterestedOutlined";
 import styles from "../../styles/teacher/Assess0.module.css";
-import VisibilityIcon from "@material-ui/icons/Visibility";
-import DeleteIcon from "@material-ui/icons/Delete";
 
 const createData = (name, calories, fat, carbs, protein) => ({
 	id: name.replace(" ", "_"),
@@ -57,13 +55,13 @@ const CustomTableCell = ({ row, name, onChange }) => {
 	);
 };
 
-export default function Home() {
+export default function Score() {
 	const [rows, setRows] = React.useState([
-		createData("Giải tích 12", "2021-2022", 39, "Nguyễn Văn A"),
-		createData("Vật lý 11", "2021-2022", 41, "Nguyễn Văn A"),
-		createData("Giáo dục công dân 10", "2021-2022", 40, "Nguyễn Văn A"),
-		createData("Hóa học 11", "2021-2022", 41, "Nguyễn Văn A"),
-		createData("Địa lý 10", "2021-2022", 45, "Nguyễn Văn A"),
+		createData("Trần Trà My", 8.6, 8.6, 8.6),
+		createData("Trần Hắc Long", 8.6, 8.6, 8.6),
+		createData("Lê Hoài Thương", 8.6, 8.6, 8.6),
+		createData("Nguyễn Thị Mỹ Lệ", 8.6, 8.6, 8.6),
+		createData("Nguyễn Thị Tố Như", 8.6, 8.6, 8.6),
 	]);
 	const [previous, setPrevious] = React.useState({});
 	const classes = useStyles();
@@ -108,55 +106,37 @@ export default function Home() {
 		});
 		onToggleEditMode(id);
 	};
-	const router = useRouter();
 
-	const handleClickDetail = () => {
-		router.push("/class/detail");
-	};
-	const handleClickDelete = () => {
-		alert("Xóa lớp thành công");
-		router.push("/class/class");
-	};
 	return (
 		<Layout>
-			<Card className="m-4 px-5 pr-5">
+			<Card className="m-4 p-5 pr-5">
 				<CardContent className={classes.content}>
 					<PerfectScrollbar>
 						<div className="pr-40 pl-40">
-							<div className="flex justify-between">
-								<div className={styles.title}>
-									DANH SÁCH LỚP HỌC
-								</div>
-								<div>
-									<div className={styles.general_intro__btn}>
-										<a href="/ClassCreate/ClassCreate">
-											Thêm lớp học
-										</a>
-									</div>
-								</div>
+							<div className={styles.title}>
+								DANH SÁCH ĐIỂM HỌC SINH
 							</div>
-
 							<Table>
 								<TableHead>
 									<TableRow>
 										<TableCell align="left">
 											<div className=" text-blue-400 text-lg font-semibold ">
-												Tên môn học
+												Tên học sinh
 											</div>{" "}
 										</TableCell>
 										<TableCell align="left">
 											<div className="text-blue-400  text-lg font-semibold">
-												Năm học
+												Điểm 15p
 											</div>{" "}
 										</TableCell>
 										<TableCell align="left">
 											<div className="text-blue-400  text-lg font-semibold">
-												Sỉ số
+												Điểm 1 tiết
 											</div>{" "}
 										</TableCell>
 										<TableCell align="left">
 											<div className="text-blue-400  text-lg font-semibold">
-												Giáo viên phụ trách
+												Điểm cuối kỳ
 											</div>{" "}
 										</TableCell>
 										<TableCell align="left">
@@ -225,35 +205,16 @@ export default function Home() {
 														</IconButton>
 													</>
 												) : (
-													<>
-														<IconButton
-															aria-label="delete"
-															onClick={() =>
-																onToggleEditMode(
-																	row.id
-																)
-															}
-														>
-															<EditIcon />
-														</IconButton>
-
-														<IconButton
-															aria-label="delete"
-															onClick={() =>
-																handleClickDetail()
-															}
-														>
-															<VisibilityIcon />
-														</IconButton>
-														<IconButton
-															aria-label="delete"
-															onClick={() =>
-																handleClickDelete()
-															}
-														>
-															<DeleteIcon />
-														</IconButton>
-													</>
+													<IconButton
+														aria-label="delete"
+														onClick={() =>
+															onToggleEditMode(
+																row.id
+															)
+														}
+													>
+														<EditIcon />
+													</IconButton>
 												)}
 											</TableCell>
 										</TableRow>

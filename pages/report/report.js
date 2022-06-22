@@ -25,8 +25,6 @@ import EditIcon from "@material-ui/icons/EditOutlined";
 import DoneIcon from "@material-ui/icons/DoneAllTwoTone";
 import RevertIcon from "@material-ui/icons/NotInterestedOutlined";
 import styles from "../../styles/teacher/Assess0.module.css";
-import VisibilityIcon from "@material-ui/icons/Visibility";
-import DeleteIcon from "@material-ui/icons/Delete";
 
 const createData = (name, calories, fat, carbs, protein) => ({
 	id: name.replace(" ", "_"),
@@ -57,13 +55,13 @@ const CustomTableCell = ({ row, name, onChange }) => {
 	);
 };
 
-export default function Home() {
+export default function Report() {
 	const [rows, setRows] = React.useState([
-		createData("Giải tích 12", "2021-2022", 39, "Nguyễn Văn A"),
-		createData("Vật lý 11", "2021-2022", 41, "Nguyễn Văn A"),
-		createData("Giáo dục công dân 10", "2021-2022", 40, "Nguyễn Văn A"),
-		createData("Hóa học 11", "2021-2022", 41, "Nguyễn Văn A"),
-		createData("Địa lý 10", "2021-2022", 45, "Nguyễn Văn A"),
+		createData("12_1", "2021-2022", 39, 35, 4, "89%"),
+		createData("12_2", "2021-2022", 41, 36, 5, "87%"),
+		createData("12_3", "2021-2022", 40, 38, 2, "95%"),
+		createData("12_4", "2021-2022", 41, 36, 5, "87%"),
+		createData("12_5", "2021-2022", 45, 41, 4, "89%"),
 	]);
 	const [previous, setPrevious] = React.useState({});
 	const classes = useStyles();
@@ -108,45 +106,25 @@ export default function Home() {
 		});
 		onToggleEditMode(id);
 	};
-	const router = useRouter();
 
-	const handleClickDetail = () => {
-		router.push("/class/detail");
-	};
-	const handleClickDelete = () => {
-		alert("Xóa lớp thành công");
-		router.push("/class/class");
-	};
 	return (
 		<Layout>
-			<Card className="m-4 px-5 pr-5">
+			<Card className="m-4 p-5 pr-5">
 				<CardContent className={classes.content}>
 					<PerfectScrollbar>
 						<div className="pr-40 pl-40">
-							<div className="flex justify-between">
-								<div className={styles.title}>
-									DANH SÁCH LỚP HỌC
-								</div>
-								<div>
-									<div className={styles.general_intro__btn}>
-										<a href="/ClassCreate/ClassCreate">
-											Thêm lớp học
-										</a>
-									</div>
-								</div>
-							</div>
-
+							<div className={styles.title}>BÁO CÁO TỔNG KẾT</div>
 							<Table>
 								<TableHead>
 									<TableRow>
 										<TableCell align="left">
 											<div className=" text-blue-400 text-lg font-semibold ">
-												Tên môn học
+												Lớp
 											</div>{" "}
 										</TableCell>
 										<TableCell align="left">
-											<div className="text-blue-400  text-lg font-semibold">
-												Năm học
+											<div className=" text-blue-400 text-lg font-semibold ">
+												Niên khóa
 											</div>{" "}
 										</TableCell>
 										<TableCell align="left">
@@ -156,7 +134,17 @@ export default function Home() {
 										</TableCell>
 										<TableCell align="left">
 											<div className="text-blue-400  text-lg font-semibold">
-												Giáo viên phụ trách
+												Số lượng đạt
+											</div>{" "}
+										</TableCell>
+										<TableCell align="left">
+											<div className="text-blue-400  text-lg font-semibold">
+												Số lượng rớt/bỏ thi
+											</div>{" "}
+										</TableCell>
+										<TableCell align="left">
+											<div className="text-blue-400  text-lg font-semibold">
+												Tỷ lệ đạt
 											</div>{" "}
 										</TableCell>
 										<TableCell align="left">
@@ -197,6 +185,20 @@ export default function Home() {
 													onChange,
 												}}
 											/>
+											<CustomTableCell
+												{...{
+													row,
+													name: "carbs",
+													onChange,
+												}}
+											/>
+											<CustomTableCell
+												{...{
+													row,
+													name: "carbs",
+													onChange,
+												}}
+											/>
 
 											<TableCell
 												className={
@@ -225,35 +227,16 @@ export default function Home() {
 														</IconButton>
 													</>
 												) : (
-													<>
-														<IconButton
-															aria-label="delete"
-															onClick={() =>
-																onToggleEditMode(
-																	row.id
-																)
-															}
-														>
-															<EditIcon />
-														</IconButton>
-
-														<IconButton
-															aria-label="delete"
-															onClick={() =>
-																handleClickDetail()
-															}
-														>
-															<VisibilityIcon />
-														</IconButton>
-														<IconButton
-															aria-label="delete"
-															onClick={() =>
-																handleClickDelete()
-															}
-														>
-															<DeleteIcon />
-														</IconButton>
-													</>
+													<IconButton
+														aria-label="delete"
+														onClick={() =>
+															onToggleEditMode(
+																row.id
+															)
+														}
+													>
+														<EditIcon />
+													</IconButton>
 												)}
 											</TableCell>
 										</TableRow>

@@ -6,7 +6,23 @@ import styles from "./Header.module.css";
 
 function Header() {
 	const router = useRouter();
-
+	const menuItems = [
+		{
+			title: "Home",
+		},
+		{
+			title: "Class",
+		},
+		{
+			title: "Student",
+		},
+		{
+			title: "Score",
+		},
+		{
+			title: "Report",
+		},
+	];
 	return (
 		<>
 			<div className={styles.bottom}>
@@ -34,22 +50,56 @@ function Header() {
 						</li>
 						<li
 							className={
+								router.asPath === "/teacher/courses"
+									? styles.active
+									: ""
+							}
+						>
+							<Link href="/teacher/courses">
+								<a>Courses</a>
+							</Link>
+						</li>
+						<li
+							className={
+								router.asPath === "/student/student"
+									? styles.active
+									: ""
+							}
+						>
+							<Link href="/student/student">
+								<a>Student</a>
+							</Link>
+						</li>
+						<li
+							className={
+								router.asPath === "/score/score"
+									? styles.active
+									: ""
+							}
+						>
+							<Link href="/score/score">
+								<a>Score</a>
+							</Link>
+						</li>
+						<li
+							className={
+								router.asPath === "/report/report"
+									? styles.active
+									: ""
+							}
+						>
+							<Link href="/report/report">
+								<a>Report</a>
+							</Link>
+						</li>
+
+						<li
+							className={
 								router.asPath === "/about" ? styles.active : ""
 							}
 						>
 							<Link href="/utilities">
 								<a>About Us</a>
-							</Link>
-						</li>
-						<li
-							className={
-								router.asPath === "/contact"
-									? styles.active
-									: ""
-							}
-						>
-							<Link href="/library">
-								<a>Contact Us</a>
 							</Link>
 						</li>
 					</ul>

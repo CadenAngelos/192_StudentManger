@@ -26,8 +26,6 @@ import DoneIcon from "@material-ui/icons/DoneAllTwoTone";
 import RevertIcon from "@material-ui/icons/NotInterestedOutlined";
 import styles from "../../styles/teacher/Assess0.module.css";
 import VisibilityIcon from "@material-ui/icons/Visibility";
-import DeleteIcon from "@material-ui/icons/Delete";
-
 const createData = (name, calories, fat, carbs, protein) => ({
 	id: name.replace(" ", "_"),
 	name,
@@ -57,13 +55,13 @@ const CustomTableCell = ({ row, name, onChange }) => {
 	);
 };
 
-export default function Home() {
+export default function Student() {
 	const [rows, setRows] = React.useState([
-		createData("Giải tích 12", "2021-2022", 39, "Nguyễn Văn A"),
-		createData("Vật lý 11", "2021-2022", 41, "Nguyễn Văn A"),
-		createData("Giáo dục công dân 10", "2021-2022", 40, "Nguyễn Văn A"),
-		createData("Hóa học 11", "2021-2022", 41, "Nguyễn Văn A"),
-		createData("Địa lý 10", "2021-2022", 45, "Nguyễn Văn A"),
+		createData("Trần Trà My", "23/04/2001", "Nữ", "12_4"),
+		createData("Trần Hắc Long", "13/05/2001", "Nam", "12_4"),
+		createData("Lê Hoài Thương", "02/09/2001", "Nữ", "12_3"),
+		createData("Nguyễn Thị Mỹ Lệ", "03/04/2001", "Nữ", "12_2"),
+		createData("Nguyễn Thị Tố Như", "11/12/2001", "Nữ", "12_4"),
 	]);
 	const [previous, setPrevious] = React.useState({});
 	const classes = useStyles();
@@ -108,60 +106,64 @@ export default function Home() {
 		});
 		onToggleEditMode(id);
 	};
+
 	const router = useRouter();
 
 	const handleClickDetail = () => {
 		router.push("/class/detail");
 	};
-	const handleClickDelete = () => {
-		alert("Xóa lớp thành công");
-		router.push("/class/class");
+
+	const axios = require("axios").default;
+	const getUser = async () => {
+		try {
+			const response = await axios.get(
+				"https://83f0dbc2137bcb.lhrtunnel.link/students"
+			);
+			console.log(response);
+		} catch (error) {
+			console.error(error);
+		}
 	};
+
+	useEffect(() => {
+		getUser();
+	}, []);
+
 	return (
 		<Layout>
-			<Card className="m-4 px-5 pr-5">
+			<Card className="m-4 p-5 pr-5">
 				<CardContent className={classes.content}>
 					<PerfectScrollbar>
 						<div className="pr-40 pl-40">
-							<div className="flex justify-between">
-								<div className={styles.title}>
-									DANH SÁCH LỚP HỌC
-								</div>
-								<div>
-									<div className={styles.general_intro__btn}>
-										<a href="/ClassCreate/ClassCreate">
-											Thêm lớp học
-										</a>
-									</div>
-								</div>
+							<div className={styles.title}>
+								DANH SÁCH HỌC SINH
 							</div>
-
 							<Table>
 								<TableHead>
 									<TableRow>
 										<TableCell align="left">
 											<div className=" text-blue-400 text-lg font-semibold ">
-												Tên môn học
+												Tên học sinh
 											</div>{" "}
 										</TableCell>
 										<TableCell align="left">
 											<div className="text-blue-400  text-lg font-semibold">
-												Năm học
+												Ngày sinh
 											</div>{" "}
 										</TableCell>
 										<TableCell align="left">
 											<div className="text-blue-400  text-lg font-semibold">
-												Sỉ số
+												Giới tính
 											</div>{" "}
 										</TableCell>
 										<TableCell align="left">
 											<div className="text-blue-400  text-lg font-semibold">
-												Giáo viên phụ trách
+												Lớp
 											</div>{" "}
 										</TableCell>
 										<TableCell align="left">
 											<div className="text-blue-400  text-lg font-semibold">
-												Chỉnh sửa
+												Action
 											</div>{" "}
 										</TableCell>
 									</TableRow>
@@ -236,7 +238,6 @@ export default function Home() {
 														>
 															<EditIcon />
 														</IconButton>
-
 														<IconButton
 															aria-label="delete"
 															onClick={() =>
@@ -244,14 +245,6 @@ export default function Home() {
 															}
 														>
 															<VisibilityIcon />
-														</IconButton>
-														<IconButton
-															aria-label="delete"
-															onClick={() =>
-																handleClickDelete()
-															}
-														>
-															<DeleteIcon />
 														</IconButton>
 													</>
 												)}
