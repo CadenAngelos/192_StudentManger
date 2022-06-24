@@ -25,7 +25,8 @@ import EditIcon from "@material-ui/icons/EditOutlined";
 import DoneIcon from "@material-ui/icons/DoneAllTwoTone";
 import RevertIcon from "@material-ui/icons/NotInterestedOutlined";
 import styles from "../../styles/teacher/Assess0.module.css";
-
+import VisibilityIcon from "@material-ui/icons/Visibility";
+import DeleteIcon from "@material-ui/icons/Delete";
 const createData = (name, calories, fat, carbs, protein) => ({
 	id: name.replace(" ", "_"),
 	name,
@@ -106,6 +107,10 @@ export default function Score() {
 		});
 		onToggleEditMode(id);
 	};
+		const handleClickDelete = () => {
+			alert("Xóa lớp thành công");
+			router.push("/class/class");
+		};
 
 	return (
 		<Layout>
@@ -205,16 +210,34 @@ export default function Score() {
 														</IconButton>
 													</>
 												) : (
-													<IconButton
-														aria-label="delete"
-														onClick={() =>
-															onToggleEditMode(
-																row.id
-															)
-														}
-													>
-														<EditIcon />
-													</IconButton>
+													<>
+														<IconButton
+															aria-label="delete"
+															onClick={() =>
+																onToggleEditMode(
+																	row.id
+																)
+															}
+														>
+															<EditIcon />
+														</IconButton>
+														<IconButton
+															aria-label="delete"
+															onClick={() =>
+																handleClickDetail()
+															}
+														>
+															<VisibilityIcon />
+														</IconButton>
+														<IconButton
+															aria-label="delete"
+															onClick={() =>
+																handleClickDelete()
+															}
+														>
+															<DeleteIcon />
+														</IconButton>
+													</>
 												)}
 											</TableCell>
 										</TableRow>
